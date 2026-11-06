@@ -1,0 +1,51 @@
+
+{
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.rulers": [79],
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": false,
+    "editor.trimTrailingWhitespace": true,
+
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.parameterHints.enabled": false,
+    "editor.hover.enabled": "off",
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggest.preview": false,
+
+    "files.insertFinalNewline": true,
+    "files.autoSave": "off",
+
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.diagnosticMode": "off",
+    "python.analysis.completeFunctionParens": false,
+    "python.terminal.executeInFileDir": true,
+
+    "mypy-type-checker.enabled": false,
+    "flake8.enabled": false,
+
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+
+    "github.copilot.inlineSuggest.enable": false,
+
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+
+    "debug.inlineValues": true,
+    "debug.showVariableTypes": true,
+
+    "terminal.integrated.scrollback": 10000
+}

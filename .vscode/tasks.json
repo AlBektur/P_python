@@ -1,0 +1,73 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Python: Run Current File",
+            "type": "shell",
+            "command": "python3",
+            "args": ["${file}"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "42: Flake8 Current File",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "-m", "flake8",
+                "--max-line-length=79",
+                "${file}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "42: Mypy Current File",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "-m", "mypy",
+                "${file}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "42: Flake8 Entire Project",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "-m", "flake8",
+                "--max-line-length=79",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "42: Mypy Entire Project",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "-m", "mypy",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "42: Run All Checks",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "42: Flake8 Entire Project",
+                "42: Mypy Entire Project"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
