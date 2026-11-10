@@ -46,10 +46,10 @@ class Plant():
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color, bloom_status=0) -> None:
+    def __init__(self, name, height, age, color) -> None:
         super().__init__(name, height, age)
         self.color = color
-        self.bloom_status = bloom_status
+        self.bloom_status = 0
 
     def grow_bloom(self, days: int, bloom: bool) -> None:
         print("[asking the rose to grow and bloom]")
@@ -71,10 +71,10 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name, height, age, td, shade=0) -> None:
+    def __init__(self, name, height, age, td) -> None:
         super().__init__(name, height, age)
         self.td = td
-        self.shade = shade
+        self.shade = 0
 
     def produce_shade(self) -> None:
         temp_height: float = float(self.height)
@@ -95,9 +95,9 @@ class Tree(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name, height, age, color, seed=0, bloom_status=0):
-        super().__init__(name, height, age, color, bloom_status)
-        self.seed = seed
+    def __init__(self, name, height, age, color):
+        super().__init__(name, height, age, color)
+        self.seed = 0
 
     def grow_age_bloom(self, days: int, bloom: bool) -> None:
         print("[make sunflower grow, age and bloom]")

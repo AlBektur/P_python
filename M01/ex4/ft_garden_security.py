@@ -3,11 +3,25 @@
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
-        self._height = height
-        self._age = age
+        if height >= 0:
+            self._height = height
+        else:
+            self._height = 0
+            print(
+                f"Given invalid value ({height}), setted default value 0\n"
+                f"Pass correct value by using set_height method"
+                )
+        if age >= 0:
+            self._age = age
+        else:
+            self._age = 0
+            print(
+                f"Given invalid value ({age}), setted default value 0\n"
+                f"Pass correct value by using set_age method"
+                )
 
     def set_height(self, new_height) -> None:
-        if new_height > 0:
+        if new_height >= 0:
             self._height = new_height
             print(f"Height updated: {new_height}cm")
         else:
@@ -15,12 +29,18 @@ class Plant:
             print("Height update rejected")
 
     def set_age(self, new_age) -> None:
-        if new_age > 0:
+        if new_age >= 0:
             self._age = new_age
             print(f"Age updated: {new_age} days")
         else:
             print(f"{self.name}: Error, age can't be negative")
             print("Age update rejected")
+
+    def get_height(self) -> float:
+        return self._height
+
+    def get_age(self) -> int:
+        return self._age
 
     def info(self) -> None:
         temp_var: float = float(self._height)
