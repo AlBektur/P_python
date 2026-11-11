@@ -1,13 +1,12 @@
 #!/opt/pyenv/shims/python3
 
-def garden_operations(operation_number):
+def garden_operations(operation_number: int) -> None:
     if operation_number == 0:
-        number = 'abc'
-        number = int(number)
+        int('abc')
     elif operation_number == 1:
         123 / 0
     elif operation_number == 2:
-        open('file.txtt', 'r')
+        open('/non/existent/file', 'r')
     elif operation_number == 3:
         "hello" + 123
     elif operation_number == 4:
