@@ -11,7 +11,7 @@ def gen_player_achievements() -> set:
             'Untouchable', 'Sharp Mind', 'Boss Slayer'
         )
 
-    res = set(random.sample(data, random.randint(0, 13)))
+    res = set(random.sample(data, random.randint(1, 13)))
 
     return res
 
