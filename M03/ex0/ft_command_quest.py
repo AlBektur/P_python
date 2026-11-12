@@ -4,7 +4,8 @@ import sys
 
 if __name__ == "__main__":
     print("=== Command Quest ===")
-    print(f"Program name: {sys.argv[0][2:]}")
+    p_name: str = sys.argv[0]
+    print(f"Program name: {p_name}")
     if len(sys.argv) > 1:
         print(f"Arguments received: {len(sys.argv) - 1}")
         for i in range(1, len(sys.argv)):

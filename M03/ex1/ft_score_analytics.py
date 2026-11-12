@@ -6,27 +6,25 @@ if __name__ == "__main__":
     print("=== Player Score Analytics ===")
     if len(sys.argv) > 1:
         arguments = sys.argv[1:]
-        i = 0
-        flag = 0
-        summa = 0
-        min_val = arguments[0]
-        max_val = arguments[0]
+        i:int = 0
+        flag:int = 0
+        summa: int = 0
+
+        min_val: int = arguments[0]
+        max_val: int = arguments[0]
+
+
+        arguments = [int(x) for x in arguments]
+            
         while i < len(arguments):
-            try:
-                summa += int(arguments[i])
-                if max_val < arguments[i]:
-                    max_val = arguments[i]
-                if min_val > arguments[i]:
-                    min_val = arguments[i]
-            except Exception:
-                flag = 1
-                print(f"Invalid parameter: '{arguments[i]}'")
+            summa += arguments[i]
+            if max_val < arguments[i]:
+                max_val = arguments[i]
+            if min_val > arguments[i]:
+                min_val = arguments[i]
             i += 1
         if flag:
-            print(
-                "No scores provided. Usage: "
-                "python3 ft_score_analytics.py <score1> <score2> ..."
-                )
+            pass
         else:
             print(f"Scores processed: {arguments}")
             print(f"Total players: {len(arguments)}")
@@ -37,6 +35,6 @@ if __name__ == "__main__":
             print(f"Score range: {int(max_val) - int(min_val)}")
     else:
         print(
-            "No scores provided. Usage:"
+            "No scores provided. Usage: "
             "python3 ft_score_analytics.py <score1> <score2> ..."
             )
