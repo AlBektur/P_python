@@ -41,9 +41,9 @@ class NumericProcessor(DataProcessor):
         if self.validate(data):
             if type(data) is list:
                 for x in data:
-                    self._queue.append(x)
+                    self._queue.append(str(x))
             else:
-                self._queue.append(data)
+                self._queue.append((data))
         else:
             raise Exception("Improper numeric data")
 
@@ -72,32 +72,27 @@ class TextProcessor(DataProcessor):
 
 class LogProcessor(DataProcessor):
     def validate(self, data: Any) -> bool:
+        def is_log_entry(entry: Any) -> bool:
+            return (
+                type(entry) is dict
+                and "log_level" in entry
+                and "log_message" in entry
+            )
+
         if type(data) is list:
-            for i in data:
-                if type(i) is not dict:
-                    return False
-            return True
-        if type(data) is dict:
-            return True
-        return False
+            return all(is_log_entry(entry) for entry in data)
+
+        return is_log_entry(data)
 
     def ingest(self, data: Any) -> None:
-        if self.validate(data):
-            if type(data) is list:
-                for x in data:
-                    if type(x) is dict:
-                        for k, v in x.items():
-                            s = f"{k}: {v}"
-                            self._queue.append(s)
-                    # else:
+        if not self.validate(data):
+            raise ValueError("Improper log data")
 
-                    #     self._queue.append(x)
-            else:
-                (k, v), = data.items()
-                s = f"{k}: {v}"
-                self._queue.append(s)
-        else:
-            raise Exception("Improper numeric data")
+        entries = data if type(data) is list else [data]
+
+        for entry in entries:
+            message = f"{entry['log_level']}: {entry['log_message']}"
+            self._queue.append(message)
 
 
 def test_np() -> None:
