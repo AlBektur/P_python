@@ -25,7 +25,7 @@ class Flameling(Creature):
         return f"{self.name} uses Fire ball"
 
     def describe(self) -> str:
-        return f"{self.name} is {self.cr_type} type Creature"
+        return f"{self.name} is a {self.cr_type} type Creature"
 
 
 class Pyrodon(Creature):
@@ -36,7 +36,7 @@ class Pyrodon(Creature):
         return f"{self.name} uses Promotheus"
 
     def describe(self) -> str:
-        return f"{self.name} is {self.cr_type} type Creature"
+        return f"{self.name} is a {self.cr_type} type Creature"
 
 
 class Aquabub(Creature):
@@ -47,7 +47,7 @@ class Aquabub(Creature):
         return f"{self.name} uses Water gun"
 
     def describe(self) -> str:
-        return f"{self.name} is {self.cr_type} type Creature"
+        return f"{self.name} is a{self.cr_type} type Creature"
 
 
 class Torragon(Creature):

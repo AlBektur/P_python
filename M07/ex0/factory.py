@@ -1,7 +1,7 @@
 #!/opt/pyenv/shims/python
 
 from abc import ABC, abstractmethod
-from .creatures import Creature, Flameling, Pyrodon, Aquabub, Torragon
+from .creatures import Flameling, Pyrodon, Aquabub, Torragon
 from typing import Any
 
 

@@ -2,23 +2,22 @@
 
 
 from abc import ABC, abstractmethod
-from typing import Any
 from ex0.creatures import Creature
 
 
 class HealCapability(ABC):
     @abstractmethod
-    def heal(self, target: Any):
-        return f"{target.name} heals itself and others for a large amount"
+    def heal(self) -> str:
+        pass
 
 
 class TransformCapability(ABC):
     @abstractmethod
-    def transform(self):
+    def transform(self) -> None:
         pass
 
     @abstractmethod
-    def revert(self):
+    def revert(self) -> None:
         pass
 
 
@@ -71,7 +70,7 @@ class Shiftling(Creature, TransformCapability):
         self.form = 'evolved'
 
     def revert(self):
-        print("Shiftling returns to normal")
+        print(f"{self.name} returns to normal")
         self.form = 'regular'
 
 
